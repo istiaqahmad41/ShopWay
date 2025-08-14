@@ -1,4 +1,4 @@
-# shop_way
+# ShopWay
 
 A new Flutter project.
 
