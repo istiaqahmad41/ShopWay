@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/login_bottom_sheet.dart';
+import '../views/login_bottom_sheet.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -13,7 +13,7 @@ class LoginScreen extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           // Background image
-          Image.asset('assets/images/background.png', fit: BoxFit.cover),
+          Image.asset('assets/images/bc.png', fit: BoxFit.cover),
 
           // Centered content in top section only
           Positioned(
@@ -26,9 +26,9 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Image.asset('assets/images/logo.png', height: 50),
                 const SizedBox(height: 5),
-                Image.asset('assets/images/welcome_back.png', height: 20),
+                Image.asset('assets/images/welcome_back.png', height: 50),
                 const SizedBox(height: 5),
-                Image.asset('assets/images/tagline.png', height: 25),
+                Image.asset('assets/images/tagline.png', height: 32),
               ],
             ),
           ),

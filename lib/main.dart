@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_way/screens/home_screen.dart';
 import 'package:shop_way/screens/login_screen.dart';
 import 'package:shop_way/screens/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,13 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
       routes: {
-   "/home": (context)=> HomeScreen(),
-        "/login": (context)=> LoginScreen(),
+        "/home": (context) => HomeScreen(),
+        "/login": (context) => LoginScreen(),
       },
     );
   }
 }
-

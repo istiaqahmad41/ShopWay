@@ -44,10 +44,7 @@ class _SplashScreenState extends State<SplashScreen>
         fit: StackFit.expand,
         children: [
           // Background image
-          Image.asset(
-            'assets/images/background.png',
-            fit: BoxFit.cover,
-          ),
+          Image.asset('assets/images/bc.png', fit: BoxFit.cover,),
 
           // Centered content
           Center(
