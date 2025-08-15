@@ -27,13 +27,13 @@ class loginForm extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-         CustomTextButton()
+         CustomTextButton(textcolor:Colors.black ,buttonName: 'Forget password?',)
           ],
         ),
 
         SizedBox(
           width: double.infinity,
-          child: CustomElevatedButton()
+          child: CustomElevatedButton(buttonName: 'Login', color: Color(0xFF0055B5), textColor: Colors.white, onpressed: () {  },)
         ),
       ],
     );

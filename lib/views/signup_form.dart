@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_way/widgets/custom_textfield_widget.dart';
 
 class signupForm extends StatefulWidget {
   @override
@@ -21,57 +22,17 @@ class _signupFormState extends State<signupForm> {
         children: [
           const Text("Username", style: TextStyle(color: Colors.black)),
           const SizedBox(height: 8),
-          TextField(
-            controller: signupUsernameController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              isDense: true,
-            ),
-          ),
+         CustomTextFieldWidget(textEditingController: signupUsernameController),
           const SizedBox(height: 16),
 
           const Text("Email", style: TextStyle(color: Colors.black)),
           const SizedBox(height: 8),
-          TextField(
-            controller: signupEmailController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              isDense: true,
-            ),
-          ),
+          CustomTextFieldWidget(textEditingController: signupEmailController),
           const SizedBox(height: 16),
 
           const Text("Password", style: TextStyle(color: Colors.black)),
           const SizedBox(height: 8),
-          TextField(
-            controller: signupPasswordController,
-            obscureText: true,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              isDense: true,
-            ),
-          ),
+        CustomTextFieldWidget(textEditingController: signupPasswordController),
           const SizedBox(height: 16),
 
           Row(

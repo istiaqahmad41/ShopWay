@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shop_way/screens/admin_register_screen.dart';
+import 'package:shop_way/widgets/custom_elevated_button.dart';
+import 'package:shop_way/widgets/custom_text_button.dart';
+import 'package:shop_way/widgets/custom_textfield_widget.dart';
+
+import '../widgets/custom_admin_textfield_widget.dart';
 
 class AdminLoginScreen extends StatefulWidget {
   const AdminLoginScreen({super.key});
@@ -70,24 +75,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                     const SizedBox(height: 6),
 
                     // Email TextField
-                    TextField(
-                      controller: adminEmailController,
-                      style: const TextStyle(color: Colors.black),
-                      decoration: InputDecoration(
-
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: const BorderSide(color: Colors.white),
-                        ),
-                        isDense: true,
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                      ),
-                    ),
+                    CustomAdminTextfieldWidget(controller: adminEmailController,),
 
                     const SizedBox(height: 20),
 
@@ -102,59 +90,14 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                     const SizedBox(height: 6),
 
                     // Password TextField with toggle
-                    TextField(
-                      controller: adminPasswordController,
-                      obscureText: !_isPasswordVisible,
-                      style: const TextStyle(color: Colors.black),
-                      decoration: InputDecoration(
-
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: const BorderSide(color: Colors.white),
-                        ),
-                        isDense: true,
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                            color: Colors.grey[700],
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              _isPasswordVisible = !_isPasswordVisible;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
+                    CustomAdminTextfieldWidget(controller: adminPasswordController,),
 
                     const SizedBox(height: 30),
 
                     // Login Button
                     SizedBox(
                       width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          print('Logging in as: ${adminEmailController.text}');
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFFBC02D),
-                          foregroundColor: Colors.black,
-                          padding: const EdgeInsets.symmetric(vertical: 14),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        child: const Text(
-                          "Login",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                        ),
-                      ),
+                      child: CustomElevatedButton(buttonName: 'Login',color: Color(0xFFFBC02D), textColor: Colors.black, onpressed: () {  },)
                     ),
 
                     const SizedBox(height: 16),
@@ -164,10 +107,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                       onPressed: () {
                         // Forgot password logic
                       },
-                      child: const Text(
-                        "Forgot your password?",
-                        style: TextStyle(fontSize: 15, color: Colors.white),
-                      ),
+                      child: CustomTextButton(textcolor: Colors.white, buttonName: 'Forget password?')
                     ),
 
                     // Sign up

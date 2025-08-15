@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_way/screens/home_screen.dart';
@@ -5,7 +6,10 @@ import 'package:shop_way/screens/login_screen.dart';
 import 'package:shop_way/screens/splash_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+
+      MyApp()
+  );
 }
 
 class MyApp extends StatelessWidget {
