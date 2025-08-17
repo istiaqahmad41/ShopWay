@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextButton extends StatelessWidget {
+class ForgetPasswordButton extends StatelessWidget {
   Color textcolor;
   String buttonName;
-   CustomTextButton({super.key, required this.textcolor,
+  ForgetPasswordButton({super.key, required this.textcolor,
    required this.buttonName});
 
   @override

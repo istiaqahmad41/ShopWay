@@ -3,7 +3,13 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../pages/admin/admin_home_page.dart';
+
+
 class Controller {
+
+
+  // Register Admin
   Future<void> adminRegister(
     BuildContext context,
     String username,
@@ -62,7 +68,57 @@ class Controller {
 
 
 
+  // Login Admin
+  Future<void> LoginAdmin(
+      BuildContext context,
+      String email,
+      String password,
+      ) async {
 
+    try {
+      final response = await http.post(
+        Uri.parse('http://192.168.1.104/PublicKeyPass_AsForeignKey/login.php'),
+        body: {
+          'email':email,
+          'password': password,
+          'role': 'admin',
+        },
+      );
+
+
+
+      final data = json.decode(response.body);
+      print(data);
+
+      if (data['status'] == 'success') {
+
+        final role = data['role'];
+        final email = data['email'];
+        final username = data['username'];
+        final adminId = data['id'].toString();
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AdminHomePage(username: username, email: email, password: password, adminId: adminId),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(data['message'] ?? 'Login failed')),
+        );
+      }
+    } catch (e) {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Something went wrong. Please try again.')),
+      );
+    }
+
+
+
+
+  }
 
 
 

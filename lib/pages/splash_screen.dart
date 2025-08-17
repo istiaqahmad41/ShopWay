@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     // Navigate to login after splash duration
     Timer(Duration(seconds: 4), () {
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/SignIn');
     });
   }
 
@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen>
         fit: StackFit.expand,
         children: [
           // Background image
-          Image.asset('assets/images/bc.png', fit: BoxFit.cover,),
+          Image.asset('assets/images/background.png', fit: BoxFit.cover,),
 
           // Centered content
           Center(
@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen>
                     scale: _logoScale,
                     curve: Curves.easeOutBack,
                     child: Image.asset(
-                      'assets/images/logo.png',
+                      'assets/images/bag.png',
                       height: 50,
                     ),
                   ),
@@ -71,10 +71,15 @@ class _SplashScreenState extends State<SplashScreen>
                 AnimatedOpacity(
                   duration: Duration(milliseconds: 800),
                   opacity: _textOpacity,
-                  child: Image.asset(
-                    'assets/images/shop_way.png',
-                    height: 25,
-                  ),
+                  child: Column(children: [
+                    Image.asset(
+                      'assets/images/app_name.png',
+                      height: 50,
+                    ),
+                    SizedBox(height: 5,),
+                    Image.asset('assets/images/admin.png',
+                      height: 20,)
+                  ],)
                 ),
               ],
             ),
