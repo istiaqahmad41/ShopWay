@@ -2,21 +2,20 @@ import 'package:flutter/material.dart';
 
 class LoginTextField extends StatelessWidget {
   final TextEditingController textEditingController;
-String hintText;
+  String hintText;
   LoginTextField({
     Key? key,
     required this.textEditingController,
-    required this.hintText
+    required this.hintText,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300, // Set your desired width here
+      width: 300,
       child: TextField(
-
         controller: textEditingController,
-        decoration:  InputDecoration(
+        decoration: InputDecoration(
           hintText: hintText,
           filled: true,
           fillColor: Colors.white,

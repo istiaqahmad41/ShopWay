@@ -27,48 +27,43 @@ class AdminHomePage extends StatefulWidget {
 class _AdminHomePageState extends State<AdminHomePage> {
   int _currentIndex = 0;
 
-  // Screens for each tab
+
   final List<Widget> _pages = [
     DashboardPage(),
     ProductsPage(),
     SubAdminPage(),
-    ActivityPage(),
     SettingsPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_currentIndex], // Show current tab content
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Color(0xFFFF526C),
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_rounded),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag),
-            label: 'Products',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.group),
-            label: 'Sub Admins',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notes),
-            label: 'Activity',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
+      body: _pages[_currentIndex],
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.dashboard),
+              onPressed: () => setState(() => _currentIndex = 0),
+            ),
+            IconButton(
+              icon: Icon(Icons.shopping_bag),
+              onPressed: () => setState(() => _currentIndex = 1),
+            ),
+            IconButton(
+              icon: Icon(Icons.group),
+              onPressed: () => setState(() => _currentIndex = 2),
+            ),
+
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () => setState(() => _currentIndex = 3),
+            ),
+          ],
+        ),
       ),
+
     );
   }
 }

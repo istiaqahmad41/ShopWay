@@ -5,7 +5,7 @@ class PrimaryButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final VoidCallback onpressed;
-  final Gradient? gradient; // new optional gradient
+  final Gradient? gradient;
 
   PrimaryButton({
     Key? key,
@@ -37,7 +37,7 @@ class PrimaryButton extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
             child: Text(
               buttonName,
-              style: TextStyle(color: textColor,fontSize: 18),
+              style: TextStyle(color: textColor, fontSize: 18),
             ),
           ),
         ),

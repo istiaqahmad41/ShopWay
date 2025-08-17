@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 class ForgetPasswordButton extends StatelessWidget {
   Color textcolor;
   String buttonName;
-  ForgetPasswordButton({super.key, required this.textcolor,
-   required this.buttonName});
+  ForgetPasswordButton({
+    super.key,
+    required this.textcolor,
+    required this.buttonName,
+  });
 
   @override
   Widget build(BuildContext context) {
